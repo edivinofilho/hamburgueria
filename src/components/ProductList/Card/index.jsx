@@ -1,9 +1,15 @@
-export const Card = ( {lunchList} ) => {
+export const Card = ( {lunchList, addShoppingCart, setAddShoppingCart} ) => {
   // console.log(lunchList)
 
   const addItem = (product) => {
-    return console.log(product)
+    if (!addShoppingCart.some((item) => item.id === product.id)) {
+      setAddShoppingCart([...addShoppingCart, product]);
+    } else {
+      console.log('Item já adicionado!')
+    }
   }
+  // console.log(addShoppingCart)
+
   return (
     <>
       {lunchList.map(lunch => 
@@ -12,7 +18,7 @@ export const Card = ( {lunchList} ) => {
           <h2>{lunch.name}</h2>
           <p>{lunch.category}</p>
           <p>{lunch.price}</p>
-          <button onClick={addItem(lunch.id)}>Adicionar</button>
+          <button onClick={() => addItem(lunch)}>Adicionar</button>
         </li>
       )}
     </>

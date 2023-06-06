@@ -11,16 +11,28 @@ import { ProductList } from './components/ProductList'
 export const App = () => {
   const [lunchList, setLunchList] = useState([])
   const [addShoppingCart, setAddShoppingCart] = useState([])
-  const [count, setCount] = useState(0)
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
-    async function loadData() {
-      const response = await api.get('/products')
-      setLunchList(response.data)
-      // console.log(response.data)
+    const loadData = async () => {
+      try {
+        const response = await api.get('/products', {
+          params: {
+            name_like: search,
+          }
+        })
+        
+        setLunchList(response.data)
+        // console.log(response.data)
+      } catch (error){
+          console.log(error)
+      } finally {
+
+      }
+      
     }
     loadData()
-  }, [])
+  }, [search])
   // console.log(lunchList)
 
   return (
@@ -28,8 +40,9 @@ export const App = () => {
       <GlobalReset />
       <GlobalStyle />
 
-      <Header />
+      <Header addShoppingCart={addShoppingCart} setAddShoppingCart={setAddShoppingCart} setSearch={setSearch}/>
       <ProductList lunchList={lunchList} addShoppingCart={addShoppingCart} setAddShoppingCart={setAddShoppingCart}/>      
+
     </>
   )
 }
