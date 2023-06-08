@@ -1,17 +1,27 @@
 import { StyledCard, StlyedCardDescription, StyledSection, StyledPrice } from './style'
 
+import { Slide, ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 export const Card = ( {lunchList, addShoppingCart, setAddShoppingCart} ) => {
-  // console.log(lunchList)
 
   const addItem = (product) => {
     if (!addShoppingCart.some((item) => item.id === product.id)) {
-      setAddShoppingCart([...addShoppingCart, product]);
+      setAddShoppingCart([...addShoppingCart, product])
+
+      toast.success('Item adicionado com sucesso!', {
+        transition: Slide,
+        autoClose: 1500
+      })
+
     } else {
-      console.log('Item já adicionado!')
+      toast.error('Este item já foi adicionado!', {
+        transition: Slide,
+        autoClose: 1500
+      })
     }
   }
-  // console.log(addShoppingCart)
-
+  
   return (
     <>
       {lunchList.map(lunch => 
@@ -24,6 +34,7 @@ export const Card = ( {lunchList, addShoppingCart, setAddShoppingCart} ) => {
             <StyledSection>{lunch.category}</StyledSection>
             <StyledPrice>{lunch.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</StyledPrice>
             <button onClick={() => addItem(lunch)}>Adicionar</button>
+            <ToastContainer></ToastContainer>
           </StlyedCardDescription>
         </StyledCard>
       )}

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalReset = createGlobalStyle`
   * {
@@ -9,7 +9,9 @@ export const GlobalReset = createGlobalStyle`
 
   body, html {
     width: 100vw;
-    height: 100vh;;
+    height: 100vh;
+
+    overflow-x: hidden;
   }
 
   input {

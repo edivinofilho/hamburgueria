@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const StyledCard = styled.li`
-  width: 14rem;
+  min-width: 14rem;
   height: 18rem;
   
-  border: .125rem solid var(--ColorGrey100);
+  border: 2px solid var(--ColorGrey100);
   border-radius: 5px;
   
   transition: 0.5s;

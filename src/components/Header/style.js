@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
   width: 100%;
-  height: 5rem;
+  height: auto;
 
   display: flex;
   align-items: center;
@@ -10,23 +10,21 @@ export const StyledHeader = styled.header`
   position: sticky;
   top: 0;
 
+  padding-top: .65rem;
+  padding-bottom: .65rem;
+
   background-color: var(--ColorGrey100);
-
-  @media (max-width: 760px) {
-    height: 9rem;
-
-    padding: 30px 5px;
-  }
 `
 
 export const StyleHeaderContent = styled.div`
   width: 100%;
+  height: auto;
   max-width: 64.5rem;
     
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: .625rem;
+  gap: .65rem;
   flex-wrap: wrap;
 `
 
@@ -52,8 +50,8 @@ export const StyleLogoContainer = styled.div`
   }
 
   > form > div > button > span {
-    width: 25px;
-    height: 25px;
+    width: 1.6rem;
+    height: 1.6rem;
 
     position: absolute;
     top: -.4rem;
@@ -89,8 +87,8 @@ export const  StyledForm = styled.form`
   background: var(--ColorWhite);
 
   button {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
 
     border-radius:8px;
     background: var(--ColorSucess);

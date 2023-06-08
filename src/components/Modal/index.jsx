@@ -12,11 +12,8 @@ export const Modal = ({ setIsOpen, addShoppingCart, setAddShoppingCart }) => {
   useEffect(() => {
     const handleOutClick = (event) => {
       if(!modalRef.current?.contains(event.target)){
-        console.log(event.target)
         setIsOpen(false)
-
       }
-      // console.log(event.target)
     }
 
     window.addEventListener('mousedown', handleOutClick)
@@ -42,8 +39,6 @@ export const Modal = ({ setIsOpen, addShoppingCart, setAddShoppingCart }) => {
       window.removeEventListener('keydown', handleKeydown)
     }
   }, [])
-
-  console.log(addShoppingCart)
 
   return (
     <StyledModalOverlay role='dialog'>

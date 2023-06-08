@@ -3,18 +3,19 @@ import Logo from '../../assets/logo.png'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { FaShoppingCart } from 'react-icons/fa'
 
-import { StyledHeader, StyleLogoContainer, StyleHeaderContent, StyledForm } from "./style"
+import { StyledHeader, StyleLogoContainer, StyleHeaderContent, StyledForm } from './style'
 
-import { InputSearch } from "./Input/Input"
-import { useState } from "react"
-import { Modal } from "../Modal/index"
+import { InputSearch } from './Input/Input'
+import { useState } from 'react'
+
+import { Modal } from '../Modal/index'
 
 export const Header = ( { addShoppingCart, setAddShoppingCart, setSearch } ) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
 
   return (
     <StyledHeader>

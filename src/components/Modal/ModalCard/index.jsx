@@ -1,4 +1,5 @@
-import Delete from '../../../assets/bin.png'
+import { MdDelete } from 'react-icons/md'
+import { StyledModalCard } from './style'
 
 export const ModalCard = ( { addShoppingCart, setAddShoppingCart }) => {
   
@@ -10,13 +11,16 @@ export const ModalCard = ( { addShoppingCart, setAddShoppingCart }) => {
   return (
     <>
       {addShoppingCart.map(lunch => 
-        <li key={lunch.id}>
+        <StyledModalCard key={lunch.id}>
           <img src={lunch.img} alt={lunch.name}></img>
-          <h2>{lunch.name}</h2>
-          
+        
+        <div>
+          <h2>{lunch.name}</h2>  
           <button onClick={() => removeItem(lunch.id)}>
-            <img src={Delete} alt="Imagem de uma lixeira para remover o produto selecionado" /></button>
-        </li>
+            <MdDelete size={22}/>
+          </button>
+        </div>
+        </StyledModalCard>
       )}
     </>
   )

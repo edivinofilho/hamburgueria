@@ -11,7 +11,6 @@ export const CartDetails = ({ addShoppingCart, setAddShoppingCart }) => {
   const removeAll = () => {
     setAddShoppingCart([])
   }
-
   
   return (
     <StyledCartDetails>

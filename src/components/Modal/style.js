@@ -17,9 +17,15 @@ export const StyledModalOverlay = styled.div`
 export const StyledModalBox = styled.div`
   position: relative;
   width: 100%;
-  height: 23rem;
+  height: 25rem;
 
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 450px;
+
+  border-radius: 8px;
     
   background: #fff;
 
@@ -49,9 +55,14 @@ export const StyledCloseModal = styled.button`
 
 export const StyledListProduct = styled.ul`
   width: 100%;
-  height: 62%;
+  height: 60%;
 
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: .3rem .3rem .6rem .4rem;
 
   overflow-x: auto;
 `
