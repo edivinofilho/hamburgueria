@@ -23,7 +23,7 @@ export const App = () => {
         })
         
         setLunchList(response.data)
-        // console.log(response.data)
+        
       } catch (error){
           console.log(error)
       } finally {
@@ -33,7 +33,6 @@ export const App = () => {
     }
     loadData()
   }, [search])
-  // console.log(lunchList)
 
   return (
     <>

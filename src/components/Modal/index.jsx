@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
 
-import { StyledModalOverlay, StyledModalBox, StyledCloseModal } from './style'
+import { StyledModalOverlay, StyledModalBox, StyledCloseModal, StyledListProduct } from './style'
 import { ModalCard } from './ModalCard'
+
+import { CartDetails } from './CartDetails/index'
 
 export const Modal = ({ setIsOpen, addShoppingCart, setAddShoppingCart }) => {
 
@@ -46,9 +48,18 @@ export const Modal = ({ setIsOpen, addShoppingCart, setAddShoppingCart }) => {
   return (
     <StyledModalOverlay role='dialog'>
       <StyledModalBox ref={modalRef}>
-        <StyledCloseModal ref={buttonRef} onClick={() => setIsOpen(false)}>Fechar</StyledCloseModal>
+
+        <div>
+          <h2>Carrinho de compras</h2>
+          <StyledCloseModal ref={buttonRef} onClick={() => setIsOpen(false)}>X</StyledCloseModal>
+        </div>
+        
+        <StyledListProduct>
           <ModalCard addShoppingCart={addShoppingCart} setAddShoppingCart={setAddShoppingCart}/>
-          
+        </StyledListProduct>
+        
+        <CartDetails addShoppingCart={addShoppingCart} setAddShoppingCart={setAddShoppingCart}/>
+
       </StyledModalBox>
     </StyledModalOverlay>
   )

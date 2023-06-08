@@ -16,6 +16,11 @@ export const GlobalReset = createGlobalStyle`
     border: none;
   }
 
+  input:focus {
+    border: none;
+    outline: none;
+  }
+
   ul, ol {
     list-style: none;
   }

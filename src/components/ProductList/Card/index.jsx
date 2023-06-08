@@ -1,3 +1,5 @@
+import { StyledCard, StlyedCardDescription, StyledSection, StyledPrice } from './style'
+
 export const Card = ( {lunchList, addShoppingCart, setAddShoppingCart} ) => {
   // console.log(lunchList)
 
@@ -13,13 +15,17 @@ export const Card = ( {lunchList, addShoppingCart, setAddShoppingCart} ) => {
   return (
     <>
       {lunchList.map(lunch => 
-        <li key={lunch.id}>
-          <img src={lunch.img} alt={lunch.name}></img>
-          <h2>{lunch.name}</h2>
-          <p>{lunch.category}</p>
-          <p>{lunch.price}</p>
-          <button onClick={() => addItem(lunch)}>Adicionar</button>
-        </li>
+        <StyledCard key={lunch.id}>
+          <div>
+            <img src={lunch.img} alt={lunch.name}></img>
+          </div>
+          <StlyedCardDescription>
+            <h2>{lunch.name}</h2>
+            <StyledSection>{lunch.category}</StyledSection>
+            <StyledPrice>{lunch.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</StyledPrice>
+            <button onClick={() => addItem(lunch)}>Adicionar</button>
+          </StlyedCardDescription>
+        </StyledCard>
       )}
     </>
   )

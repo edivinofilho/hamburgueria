@@ -1,7 +1,9 @@
-import shoppingCart from "../../assets/shoppingCart.png"
-import Lupa from "../../assets/lupa.png"
+import Logo from '../../assets/logo.png'
 
-import { StyledHeader } from "./style"
+import { AiOutlineSearch } from 'react-icons/ai'
+import { FaShoppingCart } from 'react-icons/fa'
+
+import { StyledHeader, StyleLogoContainer, StyleHeaderContent, StyledForm } from "./style"
 
 import { InputSearch } from "./Input/Input"
 import { useState } from "react"
@@ -16,23 +18,30 @@ export const Header = ( { addShoppingCart, setAddShoppingCart, setSearch } ) => 
 
   return (
     <StyledHeader>
-      <p><span>Burguer</span> Kenzie </p>
+      <StyleHeaderContent>
+        <StyleLogoContainer>
+          <img src={Logo} alt="Logo Burguer Kenzie nas cores preto e vermelho" />
 
-      <form onSubmit={handleSubmit}>
-        <button onClick={() => setIsOpen(true)}>
-          <img src={shoppingCart} alt="imagem de um carrinho de compras com o contador de produtos adicionados"/>
-        </button>
-        {isOpen ? <Modal setIsOpen={setIsOpen} addShoppingCart={addShoppingCart} setAddShoppingCart={setAddShoppingCart}>Teste</Modal> : null}
+          <form onSubmit={handleSubmit}>
+            <div>
+              <button onClick={() => setIsOpen(true)}>
+                <FaShoppingCart size={20}/>
+                <span>{addShoppingCart.length}</span>
+              </button>
 
-        <span>{addShoppingCart.length}</span>
-      </form>
+            </div>
+            {isOpen ? <Modal setIsOpen={setIsOpen} addShoppingCart={addShoppingCart} setAddShoppingCart={setAddShoppingCart}>Teste</Modal> : null}
 
-      <form onSubmit={handleSubmit}>
+          </form>
+        </StyleLogoContainer>
+
+        <StyledForm onSubmit={handleSubmit}>
           <InputSearch setSearch={setSearch}/>
-        <button type="submit">
-          <img src={Lupa} alt="imagem de uma lupa para fazer a busca"/>
-        </button>
-      </form>
-    </StyledHeader>
+          <button type="submit">
+            <AiOutlineSearch size={15}/>
+          </button>
+        </StyledForm>
+    </StyleHeaderContent>
+  </StyledHeader>
   )
 }
