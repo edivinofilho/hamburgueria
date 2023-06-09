@@ -6,18 +6,17 @@ export const StyledProductList = styled.ul`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: clamp(1rem, 100%, 1.9rem);
 
   margin: 1rem auto;
-  padding: 0 .6rem;
+  padding: 0 1rem;
 
   max-width: 64.5rem;
 
   @media(max-width: 420px){
     height: 60vh;
-    justify-content: space-between;
     flex-wrap: nowrap;
     overflow-x: auto;
 
