@@ -28,8 +28,4 @@ export const StyledProductList = styled.ul`
       height: .35rem;
     }
   }
-
-  @media (min-width: 420px) {
-    justify-content: center;
-  }
 `
