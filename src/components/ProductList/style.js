@@ -8,7 +8,7 @@ export const StyledProductList = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: clamp(1rem, 100%, 1.9rem);
 
-  margin: 1rem auto;
+  margin: 2.5rem auto;
   padding: 0 1rem;
 
   max-width: 64rem;
