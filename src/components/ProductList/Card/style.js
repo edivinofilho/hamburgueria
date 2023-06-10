@@ -27,6 +27,12 @@ export const StyledCard = styled.li`
     padding-bottom: .75rem;
 
     object-fit: cover;
+
+    @media(max-width: 470px){
+      width: 50%;
+
+      object-fit: contain;
+    }
   }
   
   :hover {
